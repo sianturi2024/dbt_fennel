@@ -27,5 +27,5 @@ WITH forecast_day_data AS (
             ,(extracted_data -> 'forecast' -> 'forecastday' -> 0 -> 'astro' ->> 'moon_phase')::VARCHAR(255) AS moon_phase
             ,(extracted_data -> 'forecast' -> 'forecastday' -> 0 -> 'astro' ->> 'moon_illumination')::NUMERIC AS moon_illumination
     FROM {{source("staging", "weather_raw")}})
-SELECT * 
+SELECT *
 FROM forecast_day_data

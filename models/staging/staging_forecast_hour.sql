@@ -40,6 +40,6 @@ forecast_hour_data AS (
             ,(hour_data ->> 'gust_kph')::NUMERIC AS gust_kph
             ,(hour_data ->> 'uv')::NUMERIC AS uv
     FROM forecast_hour_raw
-    )
+    ) 
 SELECT * 
 FROM forecast_hour_data
